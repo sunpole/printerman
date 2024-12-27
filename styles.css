@@ -1,0 +1,220 @@
+/* Общие стили */
+body {
+    background-color: #1e1e1e;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('game-background.jpg'); /* или '/game-background.jpg' */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Панель информации */
+.info-panel {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Кнопки */
+.btn {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s ease-out;
+}
+
+.btn:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.currency {
+    font-size: 30px;
+    color: #ff0;
+}
+
+/* Панель с игровым столом */
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Лоток для бумаги */
+.paper-slot {
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    background-color: #808080;
+    border: 2px solid #000;
+    position: relative;
+    border-radius: 5px;
+}
+
+/* Бумага */
+.paper {
+    width: 60px;
+    height: 80px;
+    background-color: #fff;
+    border: 3px solid #000;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Принтер */
+.printer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin-top: 50px;
+    border: 2px solid #fff;
+    padding: 10px;
+    position: relative;
+    background-color: #00008b;
+    border-radius: 10px;
+}
+
+/* Лоток для бумаги в принтере */
+.printer-lot, .printed-paper {
+    width: 80%;
+    height: 50px;
+    background-color: #0000ff;
+    margin: 5px 0;
+    position: relative;
+    border-radius: 5px;
+}
+
+/* Попапы */
+.popup, .popup-victor {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f00;
+    padding: 20px;
+    color: #fff;
+    border-radius: 10px;
+    z-index: 10;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    animation: popupAnimation 0.5s ease-out;
+}
+
+.popup-victor {
+    background-color: #ffa500;
+}
+
+/* Контент попапа */
+.popup-content, .popup-victor-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Экран завершения игры */
+.game-over {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ff0;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+/* Таймер */
+#timer {
+    color: #ff0;
+    font-size: 24px;
+}
+
+/* Кнопка закрытия попапа */
+#popup .btn-close, #popup-victor .btn-close {
+    margin-top: 10px;
+    background-color: #fff;
+    color: #f00;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#popup .btn-close:hover, #popup-victor .btn-close:hover {
+    background-color: #f00;
+    color: #fff;
+}
+
+/* Подсказки */
+.hint {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Прогресс бар */
+.loading-bar {
+    width: 80%;
+    height: 10px;
+    background-color: #444;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.loading-bar .progress {
+    height: 100%;
+    width: 0%;
+    background-color: #0f0;
+    transition: width 2s ease-in-out;
+}
+
+/* Анимация для появления попапа */
+@keyframes popupAnimation {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

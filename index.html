@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Используем один метатег viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Типография - Симулятор</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="info-panel">
+            <p class="currency">Рубасы: <span id="rubas">0</span></p>
+            <p>Время до следующего заказа бумаги: <span id="timer">10</span> секунд</p>
+        </div>
+        <div class="table" id="table">
+            <button id="order-paper" class="btn">Заказать бумагу</button>
+            <div id="paper-slot" class="paper-slot"></div>
+        </div>
+        <div id="printer" class="printer">
+            <div class="printer-lot" id="paper-lot"></div>
+            <button id="print-btn" class="btn">Печать</button>
+            <div class="printed-paper" id="printed-paper"></div>
+            <p class="label">MINI-OLTA, A-A-A CURICA 15000</p>
+        </div>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p>АЛЕКСАНДР: Мне нужно один лист запустить, я приоритетик сделаю?</p>
+                <button id="close-popup" class="btn-close">НЕ ПРОПУЩУ!</button>
+            </div>
+        </div>
+        <!-- Новое окно для Виктора -->
+        <div id="popup-victor" class="popup-victor"></div>
+        <div id="game-over" class="game-over">
+            <button id="restart-btn" class="btn">Начать заново</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
